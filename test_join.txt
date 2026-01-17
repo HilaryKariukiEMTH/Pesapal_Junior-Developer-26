@@ -1,0 +1,8 @@
+CREATE TABLE orders (id INT PRIMARY KEY, user_id INT, product VARCHAR)
+INSERT INTO orders (id, user_id, product) VALUES (1, 101, 'Laptop')
+INSERT INTO orders (id, user_id, product) VALUES (2, 102, 'Mouse')
+CREATE TABLE customers (user_id INT PRIMARY KEY, name VARCHAR, email VARCHAR UNIQUE)
+INSERT INTO customers (user_id, name, email) VALUES (101, 'Alice', 'alice@test.com')
+INSERT INTO customers (user_id, name, email) VALUES (102, 'Bob', 'bob@test.com')
+SELECT * FROM orders JOIN customers ON orders.user_id = customers.user_id
+exit
